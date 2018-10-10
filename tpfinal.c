@@ -1,9 +1,5 @@
 #include 'tpfinal.h'
 
-void pegarDoArquivo(FILE *f){
-    
-}
-
 void buscaArvore(FILE *f, char chave){
     int i=0;
     noB aux; 
