@@ -3,19 +3,28 @@
 
 #include "tpfinal.h"
 
-void chamaBusca (FILE *f, char chave){
+/*void chamaBusca (FILE *f, char chave){
     fseek(f, 1*sizeof(noB), SEEK_SET);
     buscaArvore(f, chave);
+}*/
+
+
+void buscaArvore (FILE *f, char chave, int *indice){
+    int i=0;
+    aux=fread()
+    while(i<)
 }
 
 
 
-void buscaArvore(FILE *f, char chave){
-    int i=0;
+
+/*void buscaArvore(FILE *f, char chave){
+    int i=-1;
     noB aux; 
     fread(&aux, sizeof(noB), 1, f);
     
     while(i<aux.nmerochaves && chave >aux.chave[i]){
+        printf("while\n");
         i++;
         
        
@@ -24,7 +33,7 @@ void buscaArvore(FILE *f, char chave){
             printf("Achou !!\n");
             
     }
-    if(aux.folha){
+    else if(aux.folha){
             printf("Não tá aqui\n");
     }else{
         fseek(f,aux.ind[i]*sizeof(noB), SEEK_SET);
@@ -32,7 +41,7 @@ void buscaArvore(FILE *f, char chave){
         return buscaArvore(f, chave);
     }
 }
-
+*/
 
 
 /*void Pesquisa(TipoRegistro *x, TipoApontador Ap)
