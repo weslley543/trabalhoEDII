@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 /*
         [Q]
         /  \
@@ -15,4 +16,5 @@ typedef struct nob{
     char ind[2*GRAUMIN];
 }noB;
 
-void buscaArvore(FILE *f, char chave)
+void chamaBusca (FILE *f, char chave);
+void buscaArvore(FILE *f, char chave);

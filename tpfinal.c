@@ -1,25 +1,36 @@
-#include 'tpfinal.h'
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "tpfinal.h"
+
+void chamaBusca (FILE *f, char chave){
+    fseek(f, 1*sizeof(noB), SEEK_SET);
+    buscaArvore(f, chave);
+}
+
+
 
 void buscaArvore(FILE *f, char chave){
     int i=0;
     noB aux; 
-    fread(aux, sizeof(noB), 1, f);
+    fread(&aux, sizeof(noB), 1, f);
     
-    while(i<aux.nmerochaves && chave >noB.chave[indice]){
+    while(i<aux.nmerochaves && chave >aux.chave[i]){
         i++;
+        
        
     }
-     if(chave == noB.chave[indice]){
+     if(chave == aux.chave[i]){
             printf("Achou !!\n");
             
-        }
-        if(chave.folha){
-            return NULL;
-        }else{
-            FSEEK(f,aux.ind[i]*noB, SEEK_SET);
-            fread(aux, sizeof(noB), 1, f);
-            return buscaArvore(f, chave);
-        }
+    }
+    if(aux.folha){
+            printf("Não tá aqui\n");
+    }else{
+        fseek(f,aux.ind[i]*sizeof(noB), SEEK_SET);
+        fread(&aux, sizeof(noB), 1, f);
+        return buscaArvore(f, chave);
+    }
 }
 
 
