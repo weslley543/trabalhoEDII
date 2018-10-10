@@ -4,14 +4,12 @@ void pegarDoArquivo(FILE *f){
     
 }
 
-void buscaArvore(FILE *f, char chave, int *indice){
-    //int indice=0;
+void buscaArvore(FILE *f, char chave){
     int i=0;
-    FSEEK(f, 1*noB, SEEK_SET);
     noB aux; 
     fread(aux, sizeof(noB), 1, f);
     
-    while(indice<aux.nmerochaves && chave >noB.chave[indice]){
+    while(i<aux.nmerochaves && chave >noB.chave[indice]){
         i++;
        
     }
@@ -22,8 +20,7 @@ void buscaArvore(FILE *f, char chave, int *indice){
         if(chave.folha){
             return NULL;
         }else{
-            //n++;
-            FSEEK(f,aux.ind[indice]*noB, SEEK_SET);
+            FSEEK(f,aux.ind[i]*noB, SEEK_SET);
             fread(aux, sizeof(noB), 1, f);
             return buscaArvore(f, chave);
         }
